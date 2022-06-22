@@ -1,0 +1,10 @@
+.header {
+  width: 880px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  border-bottom: solid 1px #545454;
+}
