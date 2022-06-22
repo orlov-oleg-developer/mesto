@@ -3,6 +3,7 @@
   height: 33px;
   margin-bottom: 41px;
   padding: 0;
+  box-sizing: border-box;
   fill: none;
 }
 
