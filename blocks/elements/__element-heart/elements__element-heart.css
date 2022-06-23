@@ -1,3 +1,8 @@
 .elements__element-heart {
+  width: 22px;
+  height: 19px;
+}
 
+.elements__element-heart:hover {
+  background-color: black;
 }
