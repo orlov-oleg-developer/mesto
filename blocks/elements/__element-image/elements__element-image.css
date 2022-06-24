@@ -1,6 +1,7 @@
 .elements__element-image {
-  width: 100%;
-
+  width: 282px;
+  height: 282px;
+  max-height: 282px;
   position: center center;
   object-fit: cover;
 

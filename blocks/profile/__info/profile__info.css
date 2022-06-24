@@ -1,10 +1,10 @@
 .profile__info {
   display: grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: fit-content(290px) 1fr;
   grid-template-rows: min-content min-content;
   grid-template-areas:
   "title edit-button"
-  "subtitle subtitle";
+  "subtitle .";
   row-gap: 16px;
   column-gap: 18px;
 

@@ -1,16 +1,15 @@
-.root__footer {
-  margin-bottom: 60px;
+.root__content {
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 907px) {
-  .root__footer {
+  .root__content {
     padding: 0 calc((100vw - 880px)/(907 - 880)*(0 - 19) + 19px) 0;
   }
 }
 
 @media screen and (max-width: 880px) {
-  .root__footer {
-    margin-bottom: 36px;
+  .root__content {
     padding: 0 19px 0;
   }
 }

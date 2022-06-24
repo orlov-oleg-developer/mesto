@@ -1,17 +1,6 @@
 .content {
-  margin: 0 auto;
   box-sizing: border-box;
   width: 100%;
 }
 
-@media screen and (max-width: 907px) {
-  .content {
-    padding: 0 calc((100vw - 880px)/(907 - 880)*(0 - 19) + 19px) 0;
-  }
-}
 
-@media screen and (max-width: 880px) {
-  .content {
-    padding: 0 19px 0;
-  }
-}

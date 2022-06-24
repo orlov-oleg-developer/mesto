@@ -3,6 +3,7 @@
 
 /* Root */
 @import url(../blocks/root/root.css);
+@import url(../blocks/root/__content/root__content.css);
 @import url(../blocks/root/__header/root__header.css);
 @import url(../blocks/root/__footer/root__footer.css);
 
@@ -32,6 +33,7 @@
 @import url(../blocks/elements/__element-description/elements__element-description.css);
 @import url(../blocks/elements/__element-title/elements__element-title.css);
 @import url(../blocks/elements/__element-heart/elements__element-heart.css);
+@import url(../blocks/elements/__element-heart/_active/elements__element-heart_active.css);
 
 /* Footer */
 @import url(../blocks/footer/footer.css);
