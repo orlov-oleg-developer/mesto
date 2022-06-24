@@ -3,7 +3,8 @@
   height: 282px;
   max-height: 282px;
   position: center center;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 
   border-radius: 10px 10px 0 0;
 }

@@ -1,9 +1,16 @@
 .elements {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   list-style-type: none;
+  display: -ms-grid;
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(282px, -webkit-max-content));
   grid-template-columns: repeat(auto-fit, minmax(282px, max-content));
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   row-gap: 20px;
-  column-gap: 17px;
+  -webkit-column-gap: 17px;
+     -moz-column-gap: 17px;
+          column-gap: 17px;
 }
