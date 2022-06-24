@@ -7,6 +7,6 @@
 3. Кроссбраузерность;
 4. Подходы к позиционированию: flex, position и grid;
 5. Адаптивность;
-6. JavaScript (попап, редактирование полей ввода)ю
+6. JavaScript (попап, редактирование полей ввода).
 
 Ссылка на GitHub Pages - [ссылка](https://orlov-oleg-developer.github.io/mesto/)
