@@ -9,4 +9,4 @@
 5. Адаптивность;
 6. JavaScript (попап, редактирование полей ввода)ю
 
-Ссылка на GitHub Pages - [ссылка](https://orlov-oleg-developer.github.io/russian-travel/)
+Ссылка на GitHub Pages - [ссылка](https://orlov-oleg-developer.github.io/mesto/)
