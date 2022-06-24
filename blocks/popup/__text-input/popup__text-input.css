@@ -1,0 +1,17 @@
+.popup__text-input {
+  margin-bottom: 30px;
+  padding: 0 0 13px;
+  box-sizing: border-box;
+
+  border: none;
+  border-bottom: solid 1px rgba(1, 1, 1, 0.2);
+  background-color: rgba(0, 0, 0, 0);
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.popup__text-input:nth-child(2){
+  margin-bottom: 48px;
+}
