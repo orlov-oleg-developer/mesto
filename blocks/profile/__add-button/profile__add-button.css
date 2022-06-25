@@ -7,6 +7,10 @@
 
   border: solid 2px white;
   background-color: rgba(0, 0, 0, 0);
+  background-image: url(../../../images/Plus.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 22px 22px;
 
   display: -webkit-box;
 
@@ -42,5 +46,7 @@
 @media screen and (max-width: 700px) {
   .profile__add-button {
     width: 282px;
+
+    background-size: 16px 16px;
   }
 }

@@ -16,60 +16,60 @@
     <!-- Profile -->
     <section class="profile content__profile" aria-label="Секция с профилем">
       <img class="profile__avatar" src="./images/Avatar.png" alt="Аватарка профиля">
-      <article class="profile__info">
+      <div class="profile__info">
         <h1 class="profile__title">Жак-Ив Кусто</h1>
         <p class="profile__subtitle">Исследователь океана</p>
         <button class="profile__edit-button" type="button" aria-label="edit button"></button>
-      </article>
-      <button class="profile__add-button" type="button" aria-label="add button">
-        <img class="profile__add-button-image" src="./images/Plus.svg" alt="Кнопка добавить">
-      </button>
+      </div>
+      <button class="profile__add-button" type="button" aria-label="add button"></button>
     </section>
     <!-- Elements -->
-    <ul class="elements content__elements">
-      <li class="elements__element">
-        <img class="elements__element-image" src="./images/bridge.jpg" alt="Мост">
-        <div class="elements__element-description">
-          <p class="elements__element-title">Мост</p>
-          <button class="elements__element-heart" type="button" aria-label="like button"></button>
-        </div>
-      </li>
-      <li class="elements__element">
-        <img class="elements__element-image" src="./images/coffee.jpg" alt="Кофе">
-        <div class="elements__element-description">
-          <p class="elements__element-title">Кофе</p>
-          <button class="elements__element-heart" type="button" aria-label="like button"></button>
-        </div>
-      </li>
-      <li class="elements__element">
-        <img class="elements__element-image" src="./images/work.jpg" alt="Работа">
-        <div class="elements__element-description">
-          <p class="elements__element-title">Work</p>
-          <button class="elements__element-heart" type="button" aria-label="like button"></button>
-        </div>
-      </li>
-      <li class="elements__element">
-        <img class="elements__element-image" src="./images/waterflow.jpg" alt="Водопад">
-        <div class="elements__element-description">
-          <p class="elements__element-title">Водопад</p>
-          <button class="elements__element-heart" type="button" aria-label="like button"></button>
-        </div>
-      </li>
-      <li class="elements__element">
-        <img class="elements__element-image" src="./images/water.jpg" alt="Рыбак">
-        <div class="elements__element-description">
-          <p class="elements__element-title">Рыбак</p>
-          <button class="elements__element-heart" type="button" aria-label="like button"></button>
-        </div>
-      </li>
-      <li class="elements__element">
-        <img class="elements__element-image" src="./images/mountains.jpg" alt="Заснеженные вершины гор">
-        <div class="elements__element-description">
-          <p class="elements__element-title">Заснеженные вершины гор</p>
-          <button class="elements__element-heart" type="button" aria-label="like button"></button>
-        </div>
-      </li>
-    </ul>
+    <section class="elements content__elements" aria-label="Секция с фотографиями">
+      <ul class="elements__list">
+        <li class="elements__element">
+          <img class="elements__element-image" src="./images/bridge.jpg" alt="Мост">
+          <div class="elements__element-description">
+            <h2 class="elements__element-title">Мост</h2>
+            <button class="elements__element-heart" type="button" aria-label="like button"></button>
+          </div>
+        </li>
+        <li class="elements__element">
+          <img class="elements__element-image" src="./images/coffee.jpg" alt="Кофе">
+          <div class="elements__element-description">
+            <h2 class="elements__element-title">Кофе</h2>
+            <button class="elements__element-heart" type="button" aria-label="like button"></button>
+          </div>
+        </li>
+        <li class="elements__element">
+          <img class="elements__element-image" src="./images/work.jpg" alt="Работа">
+          <div class="elements__element-description">
+            <h2 class="elements__element-title">Work</h2>
+            <button class="elements__element-heart" type="button" aria-label="like button"></button>
+          </div>
+        </li>
+        <li class="elements__element">
+          <img class="elements__element-image" src="./images/waterflow.jpg" alt="Водопад">
+          <div class="elements__element-description">
+            <h2 class="elements__element-title">Водопад</h2>
+            <button class="elements__element-heart" type="button" aria-label="like button"></button>
+          </div>
+        </li>
+        <li class="elements__element">
+          <img class="elements__element-image" src="./images/water.jpg" alt="Рыбак">
+          <div class="elements__element-description">
+            <h2 class="elements__element-title">Рыбак</h2>
+            <button class="elements__element-heart" type="button" aria-label="like button"></button>
+          </div>
+        </li>
+        <li class="elements__element">
+          <img class="elements__element-image" src="./images/mountains.jpg" alt="Заснеженные вершины гор">
+          <div class="elements__element-description">
+            <h2 class="elements__element-title">Заснеженные вершины гор</h2>
+            <button class="elements__element-heart" type="button" aria-label="like button"></button>
+          </div>
+        </li>
+      </ul>
+    </section>
   </main>
   <!-- Footer -->
   <footer class="footer root__footer">
@@ -80,10 +80,10 @@
       <div class="popup__container">
         <button class="popup__close-button" type="button" aria-label="popup-close button"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form">
-          <input class="popup__text-input" id="nameInput" type="text">
-          <input class="popup__text-input" id="jobInput" type="text">
-          <input type="submit" class="popup__submit" value="Сохранить">
+        <form class="popup__form" name="edit-profile-form">
+          <input class="popup__text-input" id="nameInput" type="text" name="form-nameInput">
+          <input class="popup__text-input" id="jobInput" type="text" name="form-jobInput">
+          <input type="submit" class="popup__submit" value="Сохранить" name="form-submit">
         </form>
       </div>
    </section>
