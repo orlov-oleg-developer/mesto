@@ -20,6 +20,9 @@
 
 @media screen and (max-width: 700px) {
   .profile__info {
+    grid-template-areas:
+    "title edit-button"
+    "subtitle subtitle";
     row-gap: 14px;
     -webkit-column-gap: 10px;
        -moz-column-gap: 10px;
