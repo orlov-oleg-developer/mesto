@@ -118,8 +118,12 @@ function closeAddCardPopup() {
 function addCard(event) {
   event.preventDefault();
 
-  // profileTitle.textContent = nameInput.value;
-  // profileJob.textContent = jobInput.value;
+  const cardsTemplate = document.querySelector('.cards-template').content;
+  const cardsElement = cardsTemplate.querySelector('.elements__element').cloneNode(true);
+  cardsElement.querySelector('.elements__element-image').src = imageInput.value.toString();
+  cardsElement.querySelector('.elements__element-title').textContent = linkInput.value;
+
+  cardsContainer.prepend(cardsElement);
 
   closeAddCardPopup();
 }
