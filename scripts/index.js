@@ -10,6 +10,37 @@ const formElement = document.querySelector('.popup__form');
 let nameInput = formElement.querySelector('.popup__text-input_type_name');
 let jobInput = formElement.querySelector('.popup__text-input_type_description');
 
+const cardsContainer = document.querySelector('.elements__list');
+
+const initialCards = [
+  {
+    name: 'Мост',
+    link: './images/bridge.jpg'
+  },
+  {
+    name: 'Кофе',
+    link: './images/coffee.jpg'
+  },
+  {
+    name: 'Work',
+    link: './images/work.jpg'
+  },
+  {
+    name: 'Водопад',
+    link: './images/waterflow.jpg'
+  },
+  {
+    name: 'Рыбак',
+    link: './images/water.jpg'
+  },
+  {
+    name: 'Заснеженные вершины гор',
+    link: './images/mountains.jpg'
+  }
+];
+
+addCards(initialCards);
+
 editButton.addEventListener('click', openPopup);
 
 closePopupButton.addEventListener('click', closePopup)
@@ -22,6 +53,18 @@ popup.addEventListener('mousedown', function(event) {
 })
 
 formElement.addEventListener('submit', changeProfileInformation);
+
+function addCards(initialCards) {
+  const cardsTemplate = document.querySelector('.cards-template').content;
+
+  initialCards.forEach(function (item) {
+    const cardsElement = cardsTemplate.querySelector('.elements__element').cloneNode(true);
+    cardsElement.querySelector('.elements__element-image').src = item.link;
+    cardsElement.querySelector('.elements__element-title').textContent = item.name;
+
+    cardsContainer.prepend(cardsElement);
+  });
+}
 
 function openPopup() {
   popup.classList.add('popup_opened');

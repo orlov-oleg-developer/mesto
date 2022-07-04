@@ -26,48 +26,7 @@
     <!-- Elements -->
     <section class="elements content__elements" aria-label="Секция с фотографиями">
       <ul class="elements__list">
-        <li class="elements__element">
-          <img class="elements__element-image" src="./images/bridge.jpg" alt="Мост">
-          <div class="elements__element-description">
-            <h2 class="elements__element-title">Мост</h2>
-            <button class="elements__element-heart" type="button" aria-label="like button"></button>
-          </div>
-        </li>
-        <li class="elements__element">
-          <img class="elements__element-image" src="./images/coffee.jpg" alt="Кофе">
-          <div class="elements__element-description">
-            <h2 class="elements__element-title">Кофе</h2>
-            <button class="elements__element-heart" type="button" aria-label="like button"></button>
-          </div>
-        </li>
-        <li class="elements__element">
-          <img class="elements__element-image" src="./images/work.jpg" alt="Работа">
-          <div class="elements__element-description">
-            <h2 class="elements__element-title">Work</h2>
-            <button class="elements__element-heart" type="button" aria-label="like button"></button>
-          </div>
-        </li>
-        <li class="elements__element">
-          <img class="elements__element-image" src="./images/waterflow.jpg" alt="Водопад">
-          <div class="elements__element-description">
-            <h2 class="elements__element-title">Водопад</h2>
-            <button class="elements__element-heart" type="button" aria-label="like button"></button>
-          </div>
-        </li>
-        <li class="elements__element">
-          <img class="elements__element-image" src="./images/water.jpg" alt="Рыбак">
-          <div class="elements__element-description">
-            <h2 class="elements__element-title">Рыбак</h2>
-            <button class="elements__element-heart" type="button" aria-label="like button"></button>
-          </div>
-        </li>
-        <li class="elements__element">
-          <img class="elements__element-image" src="./images/mountains.jpg" alt="Заснеженные вершины гор">
-          <div class="elements__element-description">
-            <h2 class="elements__element-title">Заснеженные вершины гор</h2>
-            <button class="elements__element-heart" type="button" aria-label="like button"></button>
-          </div>
-        </li>
+
       </ul>
     </section>
   </main>
@@ -75,8 +34,18 @@
   <footer class="footer root__footer">
     <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
   </footer>
-   <!-- Popup -->
-   <section class="popup" aria-label="Секция с попапом">
+  <!-- Template -->
+  <template class="cards-template">
+    <li class="elements__element">
+      <img class="elements__element-image" src="" alt="Заснеженные вершины гор">
+      <div class="elements__element-description">
+        <h2 class="elements__element-title"></h2>
+        <button class="elements__element-heart" type="button" aria-label="like button"></button>
+      </div>
+    </li>
+  </template>
+  <!-- Popup -->
+  <section class="popup" aria-label="Секция с попапом">
       <div class="popup__container">
         <button class="popup__close-button" type="button" aria-label="popup-close button"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
@@ -86,7 +55,7 @@
           <input type="submit" class="popup__submit" value="Сохранить" name="form-submit">
         </form>
       </div>
-   </section>
-   <script src="./scripts/index.js"></script>
+  </section>
+  <script src="./scripts/index.js"></script>
 </body>
 </html>
