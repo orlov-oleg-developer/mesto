@@ -1,16 +1,24 @@
-const editButton = document.querySelector('.profile__edit-button');
-const popup = document.querySelector('.popup');
-const closePopupButton = popup.querySelector('.popup__close-button');
-
 const profile = document.querySelector('.profile');
 let profileTitle = profile.querySelector('.profile__title');
 let profileJob = profile.querySelector('.profile__subtitle');
 
-const formElement = document.querySelector('.popup__form');
+const popup = document.querySelector('.popup');
+const closePopupButton = popup.querySelector('.popup__close-button');
+const editButton = profile.querySelector('.profile__edit-button');
+
+const formElement = popup.querySelector('.popup__form');
 let nameInput = formElement.querySelector('.popup__text-input_type_name');
 let jobInput = formElement.querySelector('.popup__text-input_type_description');
 
 const cardsContainer = document.querySelector('.elements__list');
+
+const addCardButton = profile.querySelector('.profile__add-button');
+const addCardPopup = document.querySelector('.popup_purpose_add-cards');
+const closeCardPopupButton = addCardPopup.querySelector('.popup__close-button');
+
+const addCardForm = addCardPopup.querySelector('.popup__form');
+let imageInput = profile.querySelector('.popup__text-input_type_image-name');
+let linkInput = profile.querySelector('.popup__text-input_type_link');
 
 const initialCards = [
   {
@@ -43,7 +51,7 @@ addCards(initialCards);
 
 editButton.addEventListener('click', openPopup);
 
-closePopupButton.addEventListener('click', closePopup)
+closePopupButton.addEventListener('click', closePopup);
 
 popup.addEventListener('mousedown', function(event) {
   if (event.target !== event.currentTarget) {
@@ -53,6 +61,19 @@ popup.addEventListener('mousedown', function(event) {
 })
 
 formElement.addEventListener('submit', changeProfileInformation);
+
+addCardButton.addEventListener('click', openAddCardPopup);
+
+closeCardPopupButton.addEventListener('click', closeAddCardPopup);
+
+addCardPopup.addEventListener('mousedown', function(event) {
+  if (event.target !== event.currentTarget) {
+    return;
+  }
+  closeAddCardPopup();
+})
+
+addCardForm.addEventListener('submit', addCard);
 
 function addCards(initialCards) {
   const cardsTemplate = document.querySelector('.cards-template').content;
@@ -85,3 +106,22 @@ function changeProfileInformation(event) {
 
   closePopup();
 }
+
+function openAddCardPopup() {
+  addCardPopup.classList.add('popup_opened');
+}
+
+function closeAddCardPopup() {
+  addCardPopup.classList.remove('popup_opened');
+}
+
+function addCard(event) {
+  event.preventDefault();
+
+  // profileTitle.textContent = nameInput.value;
+  // profileJob.textContent = jobInput.value;
+
+  closeAddCardPopup();
+}
+
+
