@@ -7,8 +7,8 @@ let profileTitle = profile.querySelector('.profile__title');
 let profileJob = profile.querySelector('.profile__subtitle');
 
 const formElement = document.querySelector('.popup__form');
-let nameInput = formElement.querySelector('#nameInput');
-let jobInput = formElement.querySelector('#jobInput');
+let nameInput = formElement.querySelector('.popup__text-input_type_name');
+let jobInput = formElement.querySelector('.popup__text-input_type_description');
 
 editButton.addEventListener('click', openPopup);
 
