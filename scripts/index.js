@@ -89,8 +89,13 @@ function addCard(name, link) {
   cardsElement.querySelector('.elements__element-title').textContent = name;
   cardsElement.querySelector('.elements__element-heart').addEventListener('click', function (event) {
       event.target.classList.toggle('elements__element-heart_active'); });
+
   cardsElement.querySelector('.elements__trash').addEventListener('click', function () {
     cardsElement.remove();
+      });
+
+  cardsElement.querySelector('.elements__element-image').addEventListener('click', function (event) {
+    openImage(link, name);
       });
 
   cardsContainer.prepend(cardsElement);
@@ -123,5 +128,19 @@ function openAddCardPopup() {
 function closeAddCardPopup() {
   addCardPopup.classList.remove('popup_opened');
 }
+
+function openImage(link, description) {
+  const fullScreenTemplate = document.querySelector('.full-screen-template').content;
+  const fullScreenElement = fullScreenTemplate.querySelector('.full-screen').cloneNode(true);
+
+  fullScreenElement.querySelector('.full-screen__image').src = link;
+  fullScreenElement.querySelector('.full-screen__description').textContent = description;
+  fullScreenElement.querySelector('.full-screen__close-button').addEventListener('click', function() {
+    fullScreenElement.remove();
+  });
+
+  document.querySelector('.content').append(fullScreenElement);
+}
+
 
 

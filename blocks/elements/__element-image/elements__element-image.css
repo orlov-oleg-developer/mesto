@@ -8,3 +8,7 @@
 
   border-radius: 10px 10px 0 0;
 }
+
+.elements__element-image:hover {
+  cursor: pointer;
+}

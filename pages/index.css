@@ -40,6 +40,13 @@
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 
+/* Full screen */
+@import url(../blocks/full-screen/full-screen.css);
+@import url(../blocks/full-screen/__element/full-screen__element.css);
+@import url(../blocks/full-screen/__close-button/full-screen__close-button.css);
+@import url(../blocks/full-screen/__image/full-screen__image.css);
+@import url(../blocks/full-screen/__description/full-screen__description.css);
+
 /* Popup */
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/_opened/popup_opened.css);

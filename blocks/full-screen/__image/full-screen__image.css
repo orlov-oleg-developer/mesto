@@ -1,0 +1,7 @@
+.full-screen__image {
+  max-height: 540px;
+  margin-bottom: 10px;
+
+  object-fit: contain;
+}
+
