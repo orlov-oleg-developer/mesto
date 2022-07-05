@@ -47,7 +47,9 @@ const initialCards = [
   }
 ];
 
-addCards(initialCards);
+initialCards.forEach(function (item) {
+  addCard(item.name, item.link);
+});
 
 editButton.addEventListener('click', openPopup);
 
@@ -73,18 +75,22 @@ addCardPopup.addEventListener('mousedown', function(event) {
   closeAddCardPopup();
 })
 
-addCardForm.addEventListener('submit', addCard);
+addCardForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+  addCard(imageInput.value, linkInput.value)
+  closeAddCardPopup();
+});
 
-function addCards(initialCards) {
+function addCard(name, link) {
   const cardsTemplate = document.querySelector('.cards-template').content;
+  const cardsElement = cardsTemplate.querySelector('.elements__element').cloneNode(true);
 
-  initialCards.forEach(function (item) {
-    const cardsElement = cardsTemplate.querySelector('.elements__element').cloneNode(true);
-    cardsElement.querySelector('.elements__element-image').src = item.link;
-    cardsElement.querySelector('.elements__element-title').textContent = item.name;
+  cardsElement.querySelector('.elements__element-image').src = link;
+  cardsElement.querySelector('.elements__element-title').textContent = name;
+  cardsElement.querySelector('.elements__element-heart').addEventListener('click', function (event) {
+      event.target.classList.toggle('elements__element-heart_active'); });
 
-    cardsContainer.prepend(cardsElement);
-  });
+  cardsContainer.prepend(cardsElement);
 }
 
 function openPopup() {
@@ -113,19 +119,6 @@ function openAddCardPopup() {
 
 function closeAddCardPopup() {
   addCardPopup.classList.remove('popup_opened');
-}
-
-function addCard(event) {
-  event.preventDefault();
-
-  const cardsTemplate = document.querySelector('.cards-template').content;
-  const cardsElement = cardsTemplate.querySelector('.elements__element').cloneNode(true);
-  cardsElement.querySelector('.elements__element-image').src = linkInput.value;
-  cardsElement.querySelector('.elements__element-title').textContent = imageInput.value;
-
-  cardsContainer.prepend(cardsElement);
-
-  closeAddCardPopup();
 }
 
 
