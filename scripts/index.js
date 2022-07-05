@@ -89,6 +89,9 @@ function addCard(name, link) {
   cardsElement.querySelector('.elements__element-title').textContent = name;
   cardsElement.querySelector('.elements__element-heart').addEventListener('click', function (event) {
       event.target.classList.toggle('elements__element-heart_active'); });
+  cardsElement.querySelector('.elements__trash').addEventListener('click', function () {
+    cardsElement.remove();
+      });
 
   cardsContainer.prepend(cardsElement);
 }

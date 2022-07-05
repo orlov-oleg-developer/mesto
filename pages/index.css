@@ -28,6 +28,7 @@
 /* Elements */
 @import url(../blocks/elements/elements.css);
 @import url(../blocks/elements/__list/elements__list.css);
+@import url(../blocks/elements/__trash/elements__trash.css);
 @import url(../blocks/elements/__element/elements__element.css);
 @import url(../blocks/elements/__element-image/elements__element-image.css);
 @import url(../blocks/elements/__element-description/elements__element-description.css);
