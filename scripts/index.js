@@ -17,8 +17,8 @@ const addCardPopup = document.querySelector('.popup_purpose_add-cards');
 const closeCardPopupButton = addCardPopup.querySelector('.popup__close-button');
 
 const addCardForm = addCardPopup.querySelector('.popup__form');
-let imageInput = profile.querySelector('.popup__text-input_type_image-name');
-let linkInput = profile.querySelector('.popup__text-input_type_link');
+let imageInput = addCardPopup.querySelector('.popup__text-input_type_image-name');
+let linkInput = addCardPopup.querySelector('.popup__text-input_type_link');
 
 const initialCards = [
   {
@@ -120,8 +120,8 @@ function addCard(event) {
 
   const cardsTemplate = document.querySelector('.cards-template').content;
   const cardsElement = cardsTemplate.querySelector('.elements__element').cloneNode(true);
-  cardsElement.querySelector('.elements__element-image').src = imageInput.value.toString();
-  cardsElement.querySelector('.elements__element-title').textContent = linkInput.value;
+  cardsElement.querySelector('.elements__element-image').src = linkInput.value;
+  cardsElement.querySelector('.elements__element-title').textContent = imageInput.value;
 
   cardsContainer.prepend(cardsElement);
 
