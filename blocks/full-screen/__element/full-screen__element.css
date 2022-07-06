@@ -1,9 +1,8 @@
 .full-screen__element {
   box-sizing: border-box;
-  padding: 90px 0 68px;
-  margin: 0 auto;
 
   display: flex;
+  justify-content: center;
   flex-direction: column;
           align-items: flex-start;
 
