@@ -42,6 +42,7 @@
 
 /* Popup */
 @import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/_purpose/popup_purpose_full-screen.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__close-button/popup__close-button.css);
@@ -52,8 +53,6 @@
 
 /* Full screen template */
 @import url(../blocks/full-screen/full-screen.css);
-@import url(../blocks/full-screen/_opened/full-screen_opened.css);
-@import url(../blocks/full-screen/__element/full-screen__element.css);
 @import url(../blocks/full-screen/__close-button/full-screen__close-button.css);
 @import url(../blocks/full-screen/__image/full-screen__image.css);
 @import url(../blocks/full-screen/__description/full-screen__description.css);
