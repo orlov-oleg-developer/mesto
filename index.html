@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="./pages/index.css">
+  <script defer src="./scripts/index.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mesto</title>
 </head>
@@ -19,9 +20,9 @@
       <div class="profile__info">
         <h1 class="profile__title">Жак-Ив Кусто</h1>
         <p class="profile__subtitle">Исследователь океана</p>
-        <button class="profile__edit-button" type="button" aria-label="edit button"></button>
+        <button class="profile__edit-button" type="button" aria-label="Кнопка редактирования профиля"></button>
       </div>
-      <button class="profile__add-button" type="button" aria-label="add button"></button>
+      <button class="profile__add-button" type="button" aria-label="Кнопка добавления карточки"></button>
     </section>
     <!-- Elements -->
     <section class="elements content__elements" aria-label="Секция с фотографиями">
@@ -35,31 +36,16 @@
     <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
   </footer>
 
-  <!-- Templates -->
-
-  <!-- Cards -->
-  <template class="cards-template">
-    <li class="elements__element">
-      <img class="elements__trash" src="./images/trash-icon.svg" alt="Иконка корзины">
-      <img class="elements__element-image" src="#" alt="#">
-      <div class="elements__element-description">
-        <h2 class="elements__element-title"></h2>
-        <button class="elements__element-heart" type="button" aria-label="like button"></button>
-      </div>
-    </li>
-  </template>
-
-
   <!-- Popups -->
 
   <!-- Popup for profile -->
   <section class="popup popup_purpose_profile" aria-label="Секция с попапом изменения профиля">
       <div class="popup__container">
-        <button class="popup__close-button" type="button" aria-label="popup-close button"></button>
+        <button class="popup__close-button" type="button" aria-label="Кнопка закрытия попапа"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
         <form class="popup__form" name="edit-profile-form">
-          <input class="popup__text-input popup__text-input_type_name" type="text" name="form-nameInput">
-          <input class="popup__text-input popup__text-input_type_description" type="text" name="form-jobInput">
+          <input class="popup__text-input popup__text-input_type_name" type="text" name="form-name-input" required>
+          <input class="popup__text-input popup__text-input_type_description" type="text" name="form-job-input" required>
           <input type="submit" class="popup__submit" value="Сохранить" name="form-submit">
         </form>
       </div>
@@ -67,23 +53,36 @@
   <!-- Popup for cards adding -->
   <section class="popup popup_purpose_add-cards" aria-label="Секция с попапом добавления карточек">
     <div class="popup__container">
-      <button class="popup__close-button" type="button" aria-label="popup-close button"></button>
+      <button class="popup__close-button" type="button" aria-label="Кнопка закрытия попапа"></button>
       <h2 class="popup__title">Новое место</h2>
       <form class="popup__form" name="edit-card-form">
-        <input class="popup__text-input popup__text-input_type_image-name" type="text" name="form-imageNameInput" placeholder="Название">
-        <input class="popup__text-input popup__text-input_type_link" type="text" name="form-linkInput" placeholder="Ссылка на картинку">
+        <input class="popup__text-input popup__text-input_type_image-name" type="text" name="form-image-name-input" placeholder="Название" required>
+        <input class="popup__text-input popup__text-input_type_link" type="url" name="form-link-input" placeholder="Ссылка на картинку" required>
         <input type="submit" class="popup__submit" value="Создать" name="form-submit">
       </form>
     </div>
   </section>
    <!-- Full screen image -->
-  <section class="full-screen" aria-label="Секция с изображением на весь экран">
-    <div class="full-screen__element">
+  <section class="popup popup_purpose_full-screen" aria-label="Секция с изображением на весь экран">
+    <div class="full-screen">
       <img class="full-screen__image" src="./images/bridge.jpg" alt="">
       <p class="full-screen__description">Мост</p>
-      <button class="full-screen__close-button" type="button" aria-label="full-screen button"></button>
+      <button class="full-screen__close-button" type="button" aria-label="Кнопка закрытия попапа"></button>
     </div>
   </section>
-  <script src="./scripts/index.js"></script>
+
+  <!-- Templates -->
+
+  <!-- Cards -->
+  <template id="cards-template">
+    <li class="elements__element">
+      <img class="elements__trash" src="./images/trash-icon.svg" alt="Иконка корзины">
+      <img class="elements__element-image" src="#" alt="#">
+      <div class="elements__element-description">
+        <h2 class="elements__element-title"></h2>
+        <button class="elements__element-heart" type="button" aria-label="Кнопка для лайка"></button>
+      </div>
+    </li>
+  </template>
 </body>
 </html>

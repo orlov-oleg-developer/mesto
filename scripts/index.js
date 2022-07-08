@@ -19,7 +19,7 @@ const selectors = {
   imageInput:'.popup__text-input_type_image-name',
   linkInput: '.popup__text-input_type_link',
 
-  cardsTemplate: '.cards-template',
+  cardsTemplate: '#cards-template',
   cardsContainer: '.elements__list',
   cardsElement: '.elements__element',
   cardImage: '.elements__element-image',
@@ -27,7 +27,7 @@ const selectors = {
   cardHeart: '.elements__element-heart',
   cardTrash: '.elements__trash',
 
-  fullScreenPopup: '.full-screen',
+  fullScreenPopup: '.popup_purpose_full-screen',
   closeFullScreenPopupButton: '.full-screen__close-button',
   fullScreenImage: '.full-screen__image',
   fullScreenDescription: '.full-screen__description',
