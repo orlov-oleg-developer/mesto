@@ -10,16 +10,16 @@ const selectors = {
   buttonCloseProfilePopup: '.popup__close-button',
 
   profileForm: '.popup__form',
-  profileFormNameInput: '.popup__text-input_type_name',
-  profileFormJobInput: '.popup__text-input_type_description',
+  profileFormNameInput: '#name-input',
+  profileFormJobInput: '#description-input',
 
   buttonAddCard: '.profile__add-button',
   popupAddCard: '.popup_purpose_add-cards',
   buttonCloseAddCardPopup: '.popup__close-button',
 
   formAddCard: '.popup__form',
-  formImageInput:'.popup__text-input_type_image-name',
-  formLinkInput: '.popup__text-input_type_link',
+  formImageInput:'#image-name-input',
+  formLinkInput: '#link-input',
 
   cardsTemplate: '#cards-template',
   cardsContainer: '.elements__list',
