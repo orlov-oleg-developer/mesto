@@ -38,7 +38,7 @@ const hasInvalidInput = (inputList) => {
   return inputList.some((input) => {
     return !input.validity.valid;
   })
-}
+};
 
 // Изменяем статус кнопки отправки формы
 const toggleButtonState = (inputList, buttonElement, selectors) => {
@@ -49,7 +49,7 @@ const toggleButtonState = (inputList, buttonElement, selectors) => {
     buttonElement.removeAttribute('disabled');
     buttonElement.classList.remove(selectors.inactiveButtonClass);
   }
-}
+};
 
 // Подключаем валидацию к каждому полю ввода формы, полученной на входе
 const setEventListeners = (formElement, selectors) => {
