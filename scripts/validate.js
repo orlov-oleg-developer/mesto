@@ -60,7 +60,7 @@ const setEventListeners = (formElement, selectors) => {
 
 // Подключаем валидацию к каждой форме документа
 const enableValidation = (selectors) => {
-  const formList = Array.from(document.querySelectorAll(selectors.formSelector));
+  const formList = Array.from(document.querySelectorAll(selectors.form));
 
   formList.forEach((formElement) => {
     formElement.addEventListener('submit', (evt) => {
@@ -73,4 +73,4 @@ const enableValidation = (selectors) => {
 
 // MAIN LOGIC
 
-enableValidation(validateSelectors);
+enableValidation(selectors);

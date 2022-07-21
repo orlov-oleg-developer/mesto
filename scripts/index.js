@@ -9,7 +9,7 @@ const buttonEdit = profile.querySelector(selectors.buttonEdit);
 
 const profilePopup = document.querySelector(selectors.profilePopup);
 const buttonCloseProfilePopup = profilePopup.querySelector(selectors.buttonCloseProfilePopup);
-const profileForm = profilePopup.querySelector(selectors.profileForm);
+const profileForm = profilePopup.querySelector(selectors.form);
 const profileFormNameInput = profileForm.querySelector(selectors.profileFormNameInput);
 const profileFormJobInput = profileForm.querySelector(selectors.profileFormJobInput);
 
@@ -18,8 +18,9 @@ const profileFormJobInput = profileForm.querySelector(selectors.profileFormJobIn
 const buttonAddCard = profile.querySelector(selectors.buttonAddCard);
 const popupAddCard = document.querySelector(selectors.popupAddCard);
 const buttonCloseAddCardPopup = popupAddCard.querySelector(selectors.buttonCloseAddCardPopup);
+const buttonPopupAddCard = popupAddCard.querySelector(selectors.submitButtonSelector);
 
-const formAddCard = popupAddCard.querySelector(selectors.formAddCard);
+const formAddCard = popupAddCard.querySelector(selectors.form);
 const formImageInput = popupAddCard.querySelector(selectors.formImageInput);
 const formLinkInput = popupAddCard.querySelector(selectors.formLinkInput);
 
@@ -59,27 +60,18 @@ function addCard(data, cardsContainer) {
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closeByEsc);
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closeByEsc);
 }
 
 function openProfilePopup() {
   openPopup(profilePopup);
   profileFormNameInput.value = profileTitle.textContent;
   profileFormJobInput.value = profileJob.textContent;
-
-  document.addEventListener('keydown', closeProfilePopupByTouchEscape)
-}
-
-function closeProfilePopup() {
-  closePopup(profilePopup);
-  document.removeEventListener('keydown', closeProfilePopupByTouchEscape);
-}
-
-function closeProfilePopupByTouchEscape (event) {
-  if(event.key === 'Escape') closeProfilePopup();
 }
 
 function changeProfileInformation(event) {
@@ -88,23 +80,7 @@ function changeProfileInformation(event) {
   profileTitle.textContent = profileFormNameInput.value;
   profileJob.textContent = profileFormJobInput.value;
 
-  closeProfilePopup();
-}
-
-function openAddCardPopup() {
-  openPopup(popupAddCard);
-
-  document.addEventListener('keydown', closeAddCardPopupByTouchEscape)
-}
-
-function closeAddCardPopup() {
-  closePopup(popupAddCard);
-
-  document.removeEventListener('keydown', closeAddCardPopupByTouchEscape)
-}
-
-function closeAddCardPopupByTouchEscape (event) {
-  if(event.key === 'Escape') closeAddCardPopup();
+  closePopup(profilePopup);
 }
 
 function openFullScreen(event) {
@@ -112,18 +88,6 @@ function openFullScreen(event) {
   fullScreenImage.alt = event.target.alt;
   fullScreenDescription.textContent = event.target.alt;
   openPopup(fullScreenPopup);
-
-  document.addEventListener('keydown', closeFullScreenPopupByTouchEscape)
-}
-
-function closeFullScreen() {
-  closePopup(fullScreenPopup);
-
-  document.removeEventListener('keydown', closeFullScreenPopupByTouchEscape)
-}
-
-function closeFullScreenPopupByTouchEscape (event) {
-  if(event.key === 'Escape') closeFullScreen();
 }
 
 function toggleLike (event) {
@@ -132,6 +96,13 @@ function toggleLike (event) {
 
 function removeCard(event) {
   event.target.closest(selectors.cardsElement).remove();
+}
+
+function closeByEsc(evt) {
+  if (evt.key === selectors.ESC_CODE) {
+    const openedPopup = document.querySelector(selectors.opendePopup);
+    closePopup(openedPopup);
+  }
 }
 
 /* Цель функции - закрыть попап при клике вне формы.
@@ -158,30 +129,36 @@ initialCards.forEach(function (item) {
 
 buttonEdit.addEventListener('click', openProfilePopup);
 
-buttonCloseProfilePopup.addEventListener('click', closeProfilePopup);
+buttonCloseProfilePopup.addEventListener('click', () => {closePopup (profilePopup)});
 
-closePopupByOverlayClick(profilePopup, closeProfilePopup);
+closePopupByOverlayClick(profilePopup, () => {closePopup (profilePopup)});
 
 profileForm.addEventListener('submit', changeProfileInformation);
 
 // Add new cards
 
-buttonAddCard.addEventListener('click', openAddCardPopup);
+buttonAddCard.addEventListener('click', () => {openPopup (popupAddCard)});
 
-buttonCloseAddCardPopup.addEventListener('click', closeAddCardPopup);
+buttonCloseAddCardPopup.addEventListener('click', () => {closePopup (popupAddCard)});
 
-closePopupByOverlayClick(popupAddCard, closeAddCardPopup);
+closePopupByOverlayClick(popupAddCard, () => {closePopup (popupAddCard)});
 
 
 formAddCard.addEventListener('submit', function (event) {
   event.preventDefault();
   addCard({name: formImageInput.value, link: formLinkInput.value}, cardsContainer);
-  closeAddCardPopup();
+
+  formImageInput.value = '';
+  formLinkInput.value = '';
+
+  toggleButtonState([formImageInput, formLinkInput], buttonPopupAddCard, selectors);
+
+  closePopup(popupAddCard);
 });
 
 // Full screen logic
 
-buttonCloseFullScreenPopup.addEventListener('click', closeFullScreen);
+buttonCloseFullScreenPopup.addEventListener('click', () => {closePopup (fullScreenPopup)});
 
-closePopupByOverlayClick(fullScreenPopup, closeFullScreen);
+closePopupByOverlayClick(fullScreenPopup, () => {closePopup (fullScreenPopup)});
 

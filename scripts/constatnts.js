@@ -7,7 +7,7 @@ const selectors = {
   profilePopup: '.popup_purpose_profile',
   buttonCloseProfilePopup: '.popup__close-button',
 
-  profileForm: '.popup__form',
+  form: '.popup__form',
   profileFormNameInput: '#name-input',
   profileFormJobInput: '#description-input',
 
@@ -15,7 +15,6 @@ const selectors = {
   popupAddCard: '.popup_purpose_add-cards',
   buttonCloseAddCardPopup: '.popup__close-button',
 
-  formAddCard: '.popup__form',
   formImageInput:'#image-name-input',
   formLinkInput: '#link-input',
 
@@ -31,16 +30,16 @@ const selectors = {
   buttonCloseFullScreenPopup: '.full-screen__close-button',
   fullScreenImage: '.full-screen__image',
   fullScreenDescription: '.full-screen__description',
-}
 
-const validateSelectors = {
-  formSelector: '.popup__form',
+  ESC_CODE: 'Escape',
+  opendePopup: '.popup_opened',
+
   inputSelector: '.popup__input',
   submitButtonSelector: '.popup__button',
   inactiveButtonClass: 'popup__button_disabled',
   inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__input-error_active'
-};
+  errorClass: 'popup__input-error_active',
+}
 
 const initialCards = [
   {
