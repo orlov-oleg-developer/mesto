@@ -173,6 +173,18 @@ function removeCard(event) {
   event.target.closest(selectors.cardsElement).remove();
 }
 
+/* Цель обработчика - закрыть попап при клике вне формы.
+Используется событие mousedown, а не click, так как такой подход защищает от следующего сценария:
+пользователь начал выделять мышкой текстовое поле и отпустил мышь вне формы - форма закрылась. */
+function closePopupByOverlayClick (popup, closeFunction) {
+  popup.addEventListener('mousedown', function(event) {
+    if (event.target !== event.currentTarget) {
+      return;
+    }
+    closeFunction();
+  })
+}
+
 // MAIN LOGIC
 
 // Cards creation
@@ -187,15 +199,7 @@ buttonEdit.addEventListener('click', openProfilePopup);
 
 buttonCloseProfilePopup.addEventListener('click', closeProfilePopup);
 
-/* Цель обработчика - закрыть попап при клике вне формы.
-Используется событие mousedown, а не click, так как такой подход защищает от следующего сценария:
-пользователь начал выделять мышкой текстовое поле и отпустил мышь вне формы - форма закрылась. */
-profilePopup.addEventListener('mousedown', function(event) {
-  if (event.target !== event.currentTarget) {
-    return;
-  }
-  closeProfilePopup();
-})
+closePopupByOverlayClick(profilePopup,closeProfilePopup);
 
 profileForm.addEventListener('submit', changeProfileInformation);
 
@@ -205,12 +209,7 @@ buttonAddCard.addEventListener('click', openAddCardPopup);
 
 buttonCloseAddCardPopup.addEventListener('click', closeAddCardPopup);
 
-popupAddCard.addEventListener('mousedown', function(event) {
-  if (event.target !== event.currentTarget) {
-    return;
-  }
-  closeAddCardPopup();
-})
+closePopupByOverlayClick(popupAddCard, closeAddCardPopup);
 
 formAddCard.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -221,3 +220,5 @@ formAddCard.addEventListener('submit', function (event) {
 // Full screen logic
 
 buttonCloseFullScreenPopup.addEventListener('click', closeFullScreen);
+
+closePopupByOverlayClick(fullScreenPopup, closeFullScreen);
