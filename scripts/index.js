@@ -128,13 +128,20 @@ function closePopup(popup) {
 }
 
 function openProfilePopup() {
-  openPopup(profilePopup)
+  openPopup(profilePopup);
   profileFormNameInput.value = profileTitle.textContent;
   profileFormJobInput.value = profileJob.textContent;
+
+  document.addEventListener('keydown', closeProfilePopupByTouchEscape)
 }
 
 function closeProfilePopup() {
   closePopup(profilePopup);
+  document.removeEventListener('keydown', closeProfilePopupByTouchEscape);
+}
+
+function closeProfilePopupByTouchEscape (event) {
+  if(event.key === 'Escape') closeProfilePopup();
 }
 
 function changeProfileInformation(event) {
@@ -148,10 +155,18 @@ function changeProfileInformation(event) {
 
 function openAddCardPopup() {
   openPopup(popupAddCard);
+
+  document.addEventListener('keydown', closeAddCardPopupByTouchEscape)
 }
 
 function closeAddCardPopup() {
   closePopup(popupAddCard);
+
+  document.removeEventListener('keydown', closeAddCardPopupByTouchEscape)
+}
+
+function closeAddCardPopupByTouchEscape (event) {
+  if(event.key === 'Escape') closeAddCardPopup();
 }
 
 function openFullScreen(event) {
@@ -159,10 +174,18 @@ function openFullScreen(event) {
   fullScreenImage.alt = event.target.alt;
   fullScreenDescription.textContent = event.target.alt;
   openPopup(fullScreenPopup);
+
+  document.addEventListener('keydown', closeFullScreenPopupByTouchEscape)
 }
 
 function closeFullScreen() {
   closePopup(fullScreenPopup);
+
+  document.removeEventListener('keydown', closeFullScreenPopupByTouchEscape)
+}
+
+function closeFullScreenPopupByTouchEscape (event) {
+  if(event.key === 'Escape') closeFullScreen();
 }
 
 function toggleLike (event) {
@@ -173,7 +196,7 @@ function removeCard(event) {
   event.target.closest(selectors.cardsElement).remove();
 }
 
-/* Цель обработчика - закрыть попап при клике вне формы.
+/* Цель функции - закрыть попап при клике вне формы.
 Используется событие mousedown, а не click, так как такой подход защищает от следующего сценария:
 пользователь начал выделять мышкой текстовое поле и отпустил мышь вне формы - форма закрылась. */
 function closePopupByOverlayClick (popup, closeFunction) {
@@ -199,7 +222,7 @@ buttonEdit.addEventListener('click', openProfilePopup);
 
 buttonCloseProfilePopup.addEventListener('click', closeProfilePopup);
 
-closePopupByOverlayClick(profilePopup,closeProfilePopup);
+closePopupByOverlayClick(profilePopup, closeProfilePopup);
 
 profileForm.addEventListener('submit', changeProfileInformation);
 
@@ -210,6 +233,7 @@ buttonAddCard.addEventListener('click', openAddCardPopup);
 buttonCloseAddCardPopup.addEventListener('click', closeAddCardPopup);
 
 closePopupByOverlayClick(popupAddCard, closeAddCardPopup);
+
 
 formAddCard.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -222,3 +246,4 @@ formAddCard.addEventListener('submit', function (event) {
 buttonCloseFullScreenPopup.addEventListener('click', closeFullScreen);
 
 closePopupByOverlayClick(fullScreenPopup, closeFullScreen);
+
